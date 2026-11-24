@@ -1,0 +1,3 @@
+#!/bin/sh
+# Bloque tout push (même fait à la main) si le garde-fou trouve une donnée perso : le repo est public.
+exec bash "$(git rev-parse --show-toplevel)/scripts/check.sh"

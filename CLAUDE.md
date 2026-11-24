@@ -9,7 +9,7 @@ Claude Code lit ce fichier à chaque session. Les règles ci-dessous s'appliquen
 2. **Les tâches vivent dans GitHub Issues** (`/tache`), jamais dans un fichier. Libre = ouverte et non assignée ; en cours = assignée ; finie = fermée.
 3. **Merge, jamais rebase. Jamais de force-push.**
 4. **Chacun fusionne sa propre PR** vers `main`, une fois `/sync` passé sans conflit. `main` est protégée : on y entre seulement par PR.
-5. **Repo public.** Aucun téléphone, e-mail, adresse perso, ni extrait du corpus `rag/` dans un fichier, une issue, une PR ou un commentaire. `scripts/check.sh` bloque les fuites évidentes : le lancer avant chaque commit.
+5. **Repo public.** Aucun téléphone, e-mail, adresse perso, ni extrait du corpus `rag/` dans un fichier, une issue, une PR ou un commentaire. `scripts/check.sh` bloque les fuites évidentes (téléphone, e-mail) : le lancer avant chaque commit ; le hook `.githooks/pre-push` (activé par `/setup`) le relance à chaque push. Il ne détecte pas un extrait du corpus : cette règle-là repose sur chacun.
 6. **À 16h39**, une personne (Raji par défaut) lance `/sujet` : le sujet devient des tâches assignées selon les profils de `equipe/`.
 7. **Le code de l'appli va dans `app/`.** Le découpage en dossiers est fixé par `/sujet` ; une tâche touche des fichiers qu'une seule personne modifie. La mise en ligne part de `main`.
 8. **Le corpus `rag/` est un sous-module privé, en lecture seule.** Quand Raji l'enrichit, il remonte le pointeur `rag` par PR ; `/sync` le récupère chez chacun.

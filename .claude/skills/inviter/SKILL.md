@@ -16,5 +16,6 @@ description: Réservé à Raji (owner) - liste les demandes d'accès ouvertes pa
    gh api -X PUT repos/Rajirahoui/benoit-ferrere-rag/collaborators/<pseudo> -f permission=pull
    gh issue close <n> -R Rajirahoui/dark-brain --comment "Invitation envoyée. Relance /setup : il l'accepte pour toi."
    ```
+   Si l'un des deux `gh api -X PUT` échoue : **ne ferme pas** l'issue, note l'erreur, passe au pseudo suivant.
 5. Pseudo non retenu : laisse l'issue ouverte, ne commente rien.
 6. Résume : invités, laissés en attente, erreurs (pseudo introuvable, déjà membre).

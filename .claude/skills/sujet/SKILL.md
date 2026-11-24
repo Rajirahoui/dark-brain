@@ -13,7 +13,7 @@ Lancé par une seule personne (Raji par défaut), qui doit avoir l'accès en éc
 - Règles utiles : `rag/00-nuit-de-l-info-2026/2026-11-24-nuit-de-l-info-2026-regles.md` (lire, ne rien recopier dans GitHub).
 
 ## 2. Équipe
-`git fetch -q origin`, puis pour chaque fichier de `git ls-tree --name-only origin/main equipe/` (sauf `.gitkeep`) : `git show origin/main:<f>` → prénom, pseudo, pôle, forces.
+`git fetch -q origin`, puis pour chaque chemin renvoyé par `git ls-tree --name-only origin/main equipe/` (chemins complets `equipe/<f>.md`, sauf `.gitkeep`) : `git show origin/main:<chemin>` → prénom, pseudo, pôle, forces.
 
 ## 3. Proposition (rien n'est créé avant le OK)
 Affiche :

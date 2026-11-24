@@ -9,7 +9,7 @@ Lecture seule : ne modifie rien, ne commente rien.
 
 1. Données :
    - `git fetch -q origin`
-   - membres : `git ls-tree --name-only origin/main equipe/` puis `git show origin/main:<f>` (prénom, pseudo, pôle)
+   - membres : `git ls-tree --name-only origin/main equipe/` (chemins complets, sauf `.gitkeep`) puis `git show origin/main:<chemin>` (prénom, pseudo, pôle)
    - tâches : `gh issue list --state all --limit 200 --json number,title,state,assignees,labels`
    - PR : `gh pr list --state open --json number,title,headRefName,author`
    - retard : pour chaque `git branch -r --format '%(refname:short)'` sauf `origin/main` et `origin/HEAD`, `git rev-list --count <b>..origin/main`

@@ -13,11 +13,13 @@ description: Synchronise la branche perso du membre avec main (merge, jamais reb
 - Interdits, toujours : `git rebase`, `git push --force` / `-f`, pousser vers `main` ou une autre branche que `<slug>`.
 
 ## 1. Récupérer
-1. Modifs non commitées (`git status --porcelain`) → propose de les commiter (message court, en français) avant de continuer. Lance `scripts/check.sh` avant le commit ; KO → montre la ligne, fais retirer la donnée, ne commite pas.
-2. `git fetch origin` puis `git merge origin/main`.
-3. Conflit : liste les fichiers (`git diff --name-only --diff-filter=U`), explique chaque conflit simplement, propose une résolution. **Ne jette jamais le code d'un autre sans accord explicite.** Après résolution : `git add` + `git commit --no-edit`.
-4. `git submodule update --init` (récupère la version du corpus fixée sur `main`).
-5. `git push origin <slug>`.
+1. `git config core.hooksPath` ≠ `.githooks` → `git config core.hooksPath .githooks` (garde-fou à chaque push).
+2. Modifs non commitées (`git status --porcelain`) → propose de les commiter (message court, en français) : `git add` des fichiers concernés (jamais `rag`), `bash scripts/check.sh`, puis commit. KO → montre la ligne, fais retirer la donnée, ne commite pas.
+3. `git fetch origin`. Si `git ls-remote origin refs/heads/<slug>` renvoie une ligne : `git merge origin/<slug>` (travail poussé depuis un autre PC). Puis `git merge origin/main`.
+4. Conflit : liste les fichiers (`git diff --name-only --diff-filter=U`), explique chaque conflit simplement, propose une résolution. **Ne jette jamais le code d'un autre sans accord explicite.** Après résolution : `git add` + `git commit --no-edit`.
+5. `git submodule update --init`. Échec (pas d'accès au corpus, pas de réseau) → **non bloquant** : préviens que `rag/` n'est pas à jour et continue.
+6. `bash scripts/check.sh`, **toujours**, même si rien n'était à commiter (un commit fait à la main peut contenir une fuite). KO → ne pousse pas, fais retirer la donnée.
+7. `git push origin <slug>`. Refusé (non fast-forward) → `git fetch origin`, `git merge origin/<slug>`, relance le push. Jamais de force.
 
 ## 2. Livrer (si demandé : « livrer », « finir », « PR »)
 1. Fais d'abord l'étape 1 en entier.

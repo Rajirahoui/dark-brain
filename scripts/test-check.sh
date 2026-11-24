@@ -32,6 +32,11 @@ expect "skill au mauvais nom bloqué" 1 "$(run)"
 printf -- '---\nname: foo\ndescription: x\n---\n' > .claude/skills/foo/SKILL.md; git add -A
 expect "skill valide passe" 0 "$(run)"
 
+mkdir -p d && echo x > d/a.txt && printf '[ok](d/a.txt) [web](https://x.y) [ancre](#t) [a2](d/a.txt#l)\n' > l.md && git add -A
+expect "lien relatif valide passe" 0 "$(run)"
+printf '[ko](absent.md)\n' > l.md; git add l.md
+expect "lien relatif cassé bloqué" 1 "$(run)"; git rm -qf l.md; git rm -rqf d
+
 # Le hook pre-push bloque une fuite même poussée à la main (hors /sync).
 c() { git -c user.name=test -c user.email=test@test commit -qm "$1"; }
 git init -q --bare "$t/remote.git" && git remote add origin "$t/remote.git" && git config core.hooksPath .githooks

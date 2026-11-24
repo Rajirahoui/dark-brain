@@ -19,5 +19,23 @@ if scan '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' | grep -v noreply; then
   echo "KO : adresse e-mail dans un fichier (repo public). Retire-la."; fail=1
 fi
 
+# Liens markdown relatifs : la cible doit exister (hors rag/ privé et docs/superpowers/ historiques).
+# (fonction hors de $(...) : le bash 3.2 de macOS analyse mal un case dans une substitution)
+links_ko() {
+  git -c core.quotepath=off ls-files -co --exclude-standard -- '*.md' ':(exclude)rag' ':(exclude)docs/superpowers' |
+  while IFS= read -r md; do
+    dir=$(dirname "$md")
+    grep -o '](\([^)]*\))' "$md" 2>/dev/null | sed 's/^](//; s/)$//' | while IFS= read -r t; do
+      case "$t" in
+        http://*|https://*|mailto:*|\#*|'') continue ;;
+      esac
+      p=$(printf '%s' "${t%%#*}" | sed 's/ ".*$//; s/%20/ /g; s/^<//; s/>$//')
+      [ -e "$dir/$p" ] || echo "KO $md : lien cassé → $t"
+    done
+  done
+}
+broken=$(links_ko)
+if [ -n "$broken" ]; then echo "$broken"; fail=1; fi
+
 [ "$fail" -eq 0 ] && echo "OK : garde-fou passé"
 exit "$fail"

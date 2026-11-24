@@ -24,11 +24,13 @@ Lance `git --version`, `gh --version`, `gh auth status`.
 
 S'il manque quelque chose, donne la commande pour son OS, dis « relance /setup après », et **arrête-toi**.
 
+**Skills Matt Pocock** (non bloquant) : si `tdd`, `grill-me` ou `code-review` ne sont pas dans tes skills disponibles, le plugin n'est pas installé. Donne : `/plugin marketplace add mattpocock/skills` puis `/plugin install mattpocock-skills@mattpocock`, puis redémarrer Claude Code. Continue sans attendre.
+
 ## 2. Qui est là
 
 - Pseudo : `gh api user --jq .login`. Ne le demande pas.
 - Profil existant : `git fetch -q origin`, puis `git ls-tree --name-only origin/main equipe/` (renvoie des chemins complets `equipe/<f>.md` ; ignore `.gitkeep`). Pour chaque chemin, `git show origin/main:<chemin>` : cherche celui dont la ligne `github:` vaut ce pseudo.
-  - Trouvé : montre-le, demande « Garder ce profil ? » (oui / le modifier). Si oui, garde le prénom et le slug de ce fichier, note **profil conservé**, et passe à l'étape 4.
+  - Trouvé : montre-le, demande « Garder ce profil ? » (oui / le modifier). Si oui, garde le prénom et le slug de ce fichier, note **profil conservé**, et passe à l'étape 4. S'il n'a pas de ligne `cerveau:`, pose seulement la question 6 de l'étape 3 et note **profil complété**.
 
 ## 3. Questions
 
@@ -38,6 +40,12 @@ Demande, avec AskUserQuestion :
 3. **Promo** : B1 · B2 · B3 · M1 · M2 (via « Other » si besoin).
 4. **Points forts** (plusieurs choix) : HTML/CSS · JavaScript/TypeScript · framework front (React, Vue…) · back (Node, Python, PHP, Java…) · bases de données · réseau/infra/déploiement · UI/UX · présentation/pitch.
 5. **Inscription faite ?** formulaire de l'école + site nuitdelinfo.com (site EPSI Lille) : les deux · un seul · aucune.
+6. **Quel cerveau tiens-tu ?** Chaque membre en tient un (voir `00_CERVEAU_MERE/02_Equipe.md`).
+   - Pseudo `Rajirahoui` → `00_CERVEAU_MERE` d'office, ne demande pas.
+   - Cerveaux : `01_CERVEAU_SUJET` · `02_CERVEAU_DESIGN` · `03_CERVEAU_FRONT` · `04_CERVEAU_BACK` · `05_CERVEAU_INFRA` · `06_CERVEAU_DEFIS` · `07_CERVEAU_PITCH`.
+   - **Libres** = ceux qu'aucun autre profil de `origin/main` ne porte dans sa ligne `cerveau:`. Ne propose jamais un cerveau pris.
+   - Propose d'abord jusqu'à 3 cerveaux libres qui collent au pôle (front → 03, back → 04, design → 02, infra → 05, pitch → 07, polyvalent → 01 puis 06) + « un autre ». Si « un autre » : deuxième question avec les autres libres.
+   - Aucun libre (plus de 8 membres) → `cerveau: renfort`.
 
 **Slug** (nom de branche et de fichier) : prénom en minuscules, accents retirés, espaces et apostrophes remplacés par `-`, rien d'autre que `a-z`, `0-9` et `-`. Exemples : « Léa-Marie » → `lea-marie`, « Noé » → `noe`, « Jean Luc » → `jean-luc`.
 **Slug refusé** : vide, commençant ou finissant par `-`, ou réservé (`main`, `head`, `rag`, `app`, `equipe`, `docs`, `scripts`) → redemande le prénom ou un surnom.
@@ -74,7 +82,7 @@ Pris → demande l'initiale du nom, utilise `<slug>-<initiale>` (« lea-d ») et
 
 ## 7. Profil
 
-**Profil conservé à l'étape 2** → ne réécris rien, passe à l'étape 8.
+**Profil conservé à l'étape 2** → ne réécris rien, passe à l'étape 8. **Profil complété** → ajoute seulement la ligne `cerveau:`.
 
 Sinon, écris `equipe/<slug>.md` :
 
@@ -82,6 +90,7 @@ Sinon, écris `equipe/<slug>.md` :
 ---
 prenom: <Prénom>
 github: <pseudo>
+cerveau: <00_CERVEAU_MERE|01_CERVEAU_SUJET|…|07_CERVEAU_PITCH|renfort>
 pole: <front|back|design|infra|pitch|polyvalent>
 promo: <B1…M2>
 forces: [<point fort>, <point fort>]
@@ -98,4 +107,4 @@ Puis `bash scripts/check.sh` (doit afficher « OK »).
 ## 8. Fin
 
 - `inscrit` ≠ oui : rappelle les **deux** inscriptions (formulaire de l'école + nuitdelinfo.com en choisissant le site EPSI Lille), **avant le 25 novembre**.
-- Dis en 3 lignes : ta branche est `<slug>` ; `/tache` pour prendre une tâche ; `/point` pour voir l'équipe.
+- Dis en 4 lignes : ta branche est `<slug>` ; ton cerveau est `<cerveau>`, lis son hub (`<cerveau>/00_Cerveau_<NOM>.md`) et sa recette avant la nuit ; le déroulé est dans `PLAYBOOK.md` ; `/tache` pour prendre une tâche, `/point` pour voir l'équipe.

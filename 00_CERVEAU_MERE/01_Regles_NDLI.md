@@ -16,9 +16,9 @@
 
 ## Veto (on ne livre pas si…)
 
-**Règles de la Nuit**
-- l'appli n'est pas en ligne à une URL publique ;
-- un défi est rendu sans respecter ses modalités (format, lieu de dépôt, heure) ;
+**Tirées des règles de la Nuit** (le veto est une règle de l'équipe, pas une sanction officielle)
+- l'application web n'est pas en ligne ;
+- un défi est rendu sans respecter ses modalités de rendu (documents, logiciels demandés ; le détail est sur la fiche de chaque défi) ;
 - on dépasse 5 défis.
 
 **Règles de l'équipe** (repo public)

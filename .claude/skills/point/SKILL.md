@@ -17,7 +17,7 @@ Lecture seule : ne modifie rien, ne commente rien.
 2. Temps restant : calcule toi-même l'écart entre l'heure de Paris et **2026-12-04 08:01**. Avant le 3 décembre 16h39, affiche plutôt le temps avant le début.
 3. Affiche, court :
    - tableau par membre : cerveau · en cours · finies · PR ouverte · commits de retard sur `main`
-   - cerveaux sans responsable (aucun profil ne porte ce `cerveau:`)
+   - cerveaux sans responsable (aucun profil ne porte ce `cerveau:`) et **alerte** si deux profils portent le même `cerveau:`
    - tâches libres (numéro + titre)
    - membres sans tâche en cours
    - temps restant et prochain jalon (`PLAYBOOK.md`)

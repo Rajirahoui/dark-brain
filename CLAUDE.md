@@ -56,7 +56,7 @@ SUJET  DESIGN  FRONT  BACK  INFRA   DÉFIS   PITCH
 | `/savoir` | question sur les règles ou le corpus (réponse dans le terminal) |
 | `/inviter` | Raji : envoyer les invitations |
 
-**Matt Pocock** (plugin `mattpocock-skills`, proposé à l'ouverture du dossier, déclaré dans `.claude/settings.json`) : `grill-me` · `domain-modeling` · `prototype` · `tdd` · `codebase-design` · `diagnosing-bugs` · `code-review` · `pr` · `wizard` · `research` · `retro`. Quel skill à quel moment : la table de routage de l'orchestrateur.
+**Matt Pocock** (plugin `mattpocock-skills`, proposé à l'ouverture du dossier, déclaré dans `.claude/settings.json`) : `/grill-me` · `domain-modeling` · `prototype` · `tdd` · `codebase-design` · `diagnosing-bugs` · `code-review` · `pr` · `wizard` · `research` · `/retro`. Quel skill à quel moment : la table de routage de l'orchestrateur.
 
 ## Repères
 

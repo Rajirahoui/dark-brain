@@ -15,21 +15,21 @@ Demande ambiguë : choisis le cerveau du livrable final (ce qui sera vu par le j
 
 | La demande… | Cerveau | Skills | Gate |
 |---|---|---|---|
-| le sujet tombe, comprendre, découper, répartir | [01 SUJET](../01_CERVEAU_SUJET/00_Cerveau_SUJET.md) puis `/sujet` | `grill-me`, `domain-modeling`, `/sujet` | [Règles NDLI](01_Regles_NDLI.md) |
+| le sujet tombe, comprendre, découper, répartir | [01 SUJET](../01_CERVEAU_SUJET/00_Cerveau_SUJET.md) puis `/sujet` | `/grill-me`, `domain-modeling`, `/sujet` | [Règles NDLI](01_Regles_NDLI.md) |
 | maquette, écran, parcours, couleurs | [02 DESIGN](../02_CERVEAU_DESIGN/00_Cerveau_DESIGN.md) | `/maquette` | — |
 | intégrer un écran, composant, CSS | [03 FRONT](../03_CERVEAU_FRONT/00_Cerveau_FRONT.md) | `prototype`, `codebase-design`, `tdd` | — |
 | API, base de données, logique métier | [04 BACK](../04_CERVEAU_BACK/00_Cerveau_BACK.md) | `tdd`, `codebase-design` | — |
 | mettre en ligne, hébergeur, variables d'env | [05 INFRA](../05_CERVEAU_INFRA/00_Cerveau_INFRA.md) | `wizard` | [Livraison](03_GATE_Livraison.md) |
 | un défi : le lire, le choisir, le rendre | [06 DÉFIS](../06_CERVEAU_DEFIS/00_Cerveau_DEFIS.md) | `/savoir`, `research` | [Règles NDLI](01_Regles_NDLI.md) |
-| démo, présentation, rendu au jury | [07 PITCH](../07_CERVEAU_PITCH/00_Cerveau_PITCH.md) | `pr` | [Livraison](03_GATE_Livraison.md) |
+| démo, présentation, rendu au jury | [07 PITCH](../07_CERVEAU_PITCH/00_Cerveau_PITCH.md) | `/savoir` | [Livraison](03_GATE_Livraison.md) |
 | « ça marche pas », bug, résultat bizarre | cerveau du fichier en cause | `diagnosing-bugs` | — |
-| livrer mon travail | cerveau de la tâche | `code-review` puis `/sync` *livrer* | — |
+| livrer mon travail | cerveau de la tâche | `code-review`, `pr` puis `/sync` *livrer* | — |
 | une tâche : créer, prendre, finir | cerveau de la tâche | `/tache` | — |
 | qui fait quoi, temps restant, retard | Cerveau Mère | `/point` | — |
 | une question sur les règles ou l'IA | Cerveau Mère | `/savoir` | — |
-| après 8h01, bilan | [07 PITCH](../07_CERVEAU_PITCH/00_Cerveau_PITCH.md) | `retro` | — |
+| après 8h01, bilan | [07 PITCH](../07_CERVEAU_PITCH/00_Cerveau_PITCH.md) | `/retro` | — |
 
-`/sujet`, `/tache`, `/point`, `/sync`, `/savoir`, `/maquette`, `/setup`, `/inviter` sont les skills de Dark Brain. `grill-me`, `domain-modeling`, `prototype`, `tdd`, `codebase-design`, `diagnosing-bugs`, `code-review`, `pr`, `wizard`, `research`, `retro` viennent du plugin de Matt Pocock (proposé à l'ouverture du dossier).
+`/sujet`, `/tache`, `/point`, `/sync`, `/savoir`, `/maquette`, `/setup`, `/inviter` sont les skills de Dark Brain. `/grill-me`, `domain-modeling`, `prototype`, `tdd`, `codebase-design`, `diagnosing-bugs`, `code-review`, `pr`, `wizard`, `research`, `/retro` viennent du plugin de Matt Pocock (proposé à l'ouverture du dossier). **`/grill-me` et `/retro` se tapent à la main** : Claude ne peut pas les lancer seul. Les autres, Claude les lance quand la ligne le dit.
 
 ## Arbitrage (en cas de conflit, dans cet ordre)
 

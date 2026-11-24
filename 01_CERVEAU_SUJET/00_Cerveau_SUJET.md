@@ -13,7 +13,7 @@ Transformer le sujet national en **un périmètre faisable en une nuit** : qui e
 16h39 écoute · 16h45-17h15 analyse + `/sujet` avec Raji · 23h vérifie l'appli minimale · 3h tranche le gel des fonctions.
 
 ## Skills
-`grill-me` (10 minutes, pour tester l'interprétation du sujet) · `domain-modeling` (glossaire) · `/sujet` (lancé par Raji) · `/savoir` (règles).
+`/grill-me` (10 minutes, pour tester l'interprétation du sujet) · `domain-modeling` (glossaire) · `/sujet` (lancé par Raji) · `/savoir` (règles).
 
 ## Checklist
 - [ ] Sujet noté mot pour mot dans l'issue « Sujet NDLI 2026 ».

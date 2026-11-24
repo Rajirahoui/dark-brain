@@ -35,7 +35,16 @@ expect "skill valide passe" 0 "$(run)"
 mkdir -p d && echo x > d/a.txt && printf '[ok](d/a.txt) [web](https://x.y) [ancre](#t) [a2](d/a.txt#l)\n' > l.md && git add -A
 expect "lien relatif valide passe" 0 "$(run)"
 printf '[ko](absent.md)\n' > l.md; git add l.md
-expect "lien relatif cassé bloqué" 1 "$(run)"; git rm -qf l.md; git rm -rqf d
+expect "lien relatif cassé bloqué" 1 "$(run)"; git rm -qf l.md
+
+echo x > 'd/é.md'; echo x > 'd/f(1).md'; git add -A
+printf '[accent](d/%%C3%%A9.md) [paren](d/f(1).md) [query](d/a.txt?x=1)\n' > l.md; git add l.md
+expect "lien encodé, parenthèses, query acceptés" 0 "$(run)"
+printf 'du code `[x](absent.md)` ici\n\n```\n[bloc](absent.md)\n```\n' > l.md; git add l.md
+expect "lien dans du code ignoré" 0 "$(run)"
+printf '[casse](d/A.txt)\n' > l.md; git add l.md
+expect "lien à la mauvaise casse bloqué" 1 "$(run)"
+git rm -qf l.md; git rm -rqf d
 
 # Le hook pre-push bloque une fuite même poussée à la main (hors /sync).
 c() { git -c user.name=test -c user.email=test@test commit -qm "$1"; }

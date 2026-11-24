@@ -20,7 +20,7 @@
 | Heure | Jalon | Cerveaux | Commandes |
 |---|---|---|---|
 | **16h39** | sujet dévoilé | tous écoutent, [SUJET](01_CERVEAU_SUJET/00_Cerveau_SUJET.md) note | — |
-| 16h45-17h15 | cadrage, choix des défis, tâches | SUJET + Raji + DÉFIS | `grill-me`, `domain-modeling`, `/sujet` |
+| 16h45-17h15 | cadrage, choix des défis, tâches | SUJET + Raji + DÉFIS | `/grill-me`, `domain-modeling`, `/sujet` |
 | **17h15** | chacun a une tâche | tous | `/tache` *mes tâches* |
 | 17h15-18h | maquette · squelette d'appli · contrat d'API · page vide en ligne | DESIGN · FRONT · BACK · INFRA | `/maquette`, `codebase-design`, `wizard` |
 | **18h** | maquette validée | DESIGN + SUJET + FRONT | `/tache` *finir* |
@@ -35,7 +35,7 @@
 | **7h45** | gel final : plus aucune fusion sur `main` | Raji | — |
 | **8h01** | fin | — | — |
 | vendredi matin | jury par défi | PITCH | — |
-| après | retro, synthèse dans le corpus privé | PITCH + Raji | `retro` |
+| après | retro, synthèse dans le corpus privé | PITCH + Raji | `/retro` |
 
 ## Le rythme
 

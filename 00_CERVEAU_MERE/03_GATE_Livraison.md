@@ -14,12 +14,12 @@ Passer d'abord [Règles NDLI](01_Regles_NDLI.md) (veto), puis dans cet ordre :
 - [ ] Les écrans vides, les erreurs et les chargements ont un message clair (pas de page blanche).
 
 ## 3. Les défis
-- [ ] Pour chaque fiche de `06_CERVEAU_DEFIS/` : rendu fait **selon ses modalités** (format, lieu, heure), case cochée dans la fiche.
+- [ ] Pour chaque fiche défi `06_CERVEAU_DEFIS/<slug>.md` (pas le hub `00_*`, ni `Recette_*`, ni `_modele_defi.md`) : rendu fait **selon ses modalités**, case « Rendu » cochée dans la fiche.
 - [ ] 5 défis au plus.
 
 ## 4. Le dépôt
 - [ ] Rendu déposé sur le « site pérenne » / la plateforme indiquée par l'organisation.
-- [ ] Coordonnées de l'équipe saisies **sur la plateforme** (pour les lots), jamais dans le repo.
+- [ ] Coordonnées de l'équipe (nom, e-mail, adresse) données à l'organisation pour les lots, par le canal qu'elle indique (à vérifier le soir même), jamais dans le repo.
 
 ## 5. Le repo
 - [ ] `bash scripts/check.sh` → OK.

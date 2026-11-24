@@ -19,4 +19,4 @@
 Dérouler la GATE Livraison (`00_CERVEAU_MERE/03_GATE_Livraison.md`) avec Raji, point par point. Un point manque → seul son correctif est fusionné.
 
 ## Après 8h01 : retro
-`retro` avec l'équipe, 20 minutes : ce qui a marché, ce qui a coincé, ce qu'on refait. Raji ajoute la synthèse au corpus privé pour la prochaine édition.
+`/retro` avec l'équipe, 20 minutes : ce qui a marché, ce qui a coincé, ce qu'on refait. Raji ajoute la synthèse au corpus privé pour la prochaine édition.

@@ -9,7 +9,7 @@
    - Que fait-il dans notre appli, du début à la fin ? (le parcours principal)
    - Qu'est-ce qui rendrait la démo mémorable pour le jury ?
    - Quelles contraintes impose le sujet (thème, public, accessibilité, données) ?
-3. **`grill-me` avec Raji, 10 minutes max.** Objectif : casser les fausses bonnes idées avant d'écrire une ligne de code.
+3. **`/grill-me` avec Raji, 10 minutes max.** Objectif : casser les fausses bonnes idées avant d'écrire une ligne de code.
 4. **Périmètre en trois colonnes :**
    | MVP (23h) | Si on a le temps (3h) | On ne fait pas |
    |---|---|---|

@@ -10,10 +10,10 @@ Que le jury **comprenne et voie** ce qu'on a fait : une démo qui marche, une pr
 - **Produit :** le scénario de démo, la présentation, `app/README.md`, la GATE passée, la retro. Arbitre ce qui est montré au jury.
 
 ## Quand
-Dès 18h : écrire le scénario de démo à partir du parcours · 23h : premier essai de démo · 3h-7h : présentation, README, répétition · 7h : GATE Livraison · vendredi matin : jury · après : `retro`.
+Dès 18h : écrire le scénario de démo à partir du parcours · 23h : premier essai de démo · 3h-7h : présentation, README, répétition · 7h : GATE Livraison · vendredi matin : jury · après : `/retro`.
 
 ## Skills
-`pr` (descriptions de PR claires) · `retro` (bilan) · `/point` · `/savoir`.
+`/savoir` (règles de rendu) · `/retro` (bilan, à taper) · `/point`.
 
 ## Checklist
 - [ ] Scénario de démo de 2 minutes, testé en ligne sur téléphone.

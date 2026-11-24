@@ -24,7 +24,7 @@ Lance `git --version`, `gh --version`, `gh auth status`.
 
 S'il manque quelque chose, donne la commande pour son OS, dis « relance /setup après », et **arrête-toi**.
 
-**Skills Matt Pocock** (non bloquant) : si `tdd`, `grill-me` ou `code-review` ne sont pas dans tes skills disponibles, le plugin n'est pas installé. Donne : `/plugin marketplace add mattpocock/skills` puis `/plugin install mattpocock-skills@mattpocock`, puis redémarrer Claude Code. Continue sans attendre.
+**Skills Matt Pocock** (non bloquant) : si le skill `tdd` n'est pas dans tes skills disponibles (seul test fiable : `grill-me` et `retro` ne s'y affichent jamais, `code-review` existe aussi sans le plugin), le plugin n'est pas installé ; la personne peut aussi vérifier avec `/plugin`. Donne : `/plugin marketplace add mattpocock/skills` puis `/plugin install mattpocock-skills@mattpocock`, puis redémarrer Claude Code. Continue sans attendre.
 
 ## 2. Qui est là
 
@@ -47,7 +47,7 @@ Demande, avec AskUserQuestion :
    - Propose d'abord jusqu'à 3 cerveaux libres qui collent au pôle (front → 03, back → 04, design → 02, infra → 05, pitch → 07, polyvalent → 01 puis 06) + « un autre ». Si « un autre » : deuxième question avec les autres libres.
    - Aucun libre (plus de 8 membres) → `cerveau: renfort`.
 
-**Slug** (nom de branche et de fichier) : prénom en minuscules, accents retirés, espaces et apostrophes remplacés par `-`, rien d'autre que `a-z`, `0-9` et `-`. Exemples : « Léa-Marie » → `lea-marie`, « Noé » → `noe`, « Jean Luc » → `jean-luc`.
+**Slug** (nom de branche et de fichier ; `/sujet` l'applique aussi aux défis) : minuscules ; accents retirés et ligatures développées (é → e, ç → c, œ → oe, æ → ae) ; toute suite de caractères hors `a-z` et `0-9` devient **un seul** `-` ; pas de `-` au début ni à la fin ; 40 caractères au plus. Exemples : « Léa-Marie » → `lea-marie`, « Noé » → `noe`, « Jean Luc » → `jean-luc`, « Défi : Éco & Co’ » → `defi-eco-co`.
 **Slug refusé** : vide, commençant ou finissant par `-`, ou réservé (`main`, `head`, `rag`, `app`, `equipe`, `docs`, `scripts`) → redemande le prénom ou un surnom.
 **Doublon** : le slug est pris si
 - `git show origin/main:equipe/<slug>.md` existe avec un autre `github:`, ou
@@ -99,10 +99,12 @@ inscrit: <oui|partiel|non>
 ---
 ```
 
+**Cerveau toujours libre ?** Juste avant le commit : `git fetch -q origin`, refais le test « libres » de la question 6 (la liste a pu changer pendant que tu attendais l'accès). Pris entre-temps → redemande parmi les libres.
+
 Puis `bash scripts/check.sh` (doit afficher « OK »).
 
 - **Profil absent de `origin/main`** (premier setup) : `git add equipe/<slug>.md`, commit `équipe : profil <slug>`, `git push -u origin <slug>`. PR ouverte pour `<slug>` (`gh pr list --head <slug> --base main --state open --json number`) → réutilise-la ; sinon `gh pr create --base main --head <slug> --title "équipe : profil <slug>" --body "Profil créé par /setup."`. Puis `gh pr merge <n> --merge` (**sans** `--delete-branch`). À ce moment la branche ne contient que le profil : la fusion est sans risque.
-- **Profil déjà sur `origin/main`** : ne crée **aucune** PR (la branche peut contenir du travail en cours). Si le profil a changé, commit sur la branche et dis : « Ton profil partira avec ta prochaine livraison (/sync livrer). »
+- **Profil déjà sur `origin/main`** : si ta branche n'a **aucun** commit absent de `main` (`git rev-list --count origin/main..HEAD` = 0 avant ton commit), fais comme au premier setup (commit, push, PR, fusion) : le cerveau est réservé tout de suite. Sinon ne crée **aucune** PR (la branche contient du travail en cours) : commit sur la branche, et dis « Ton profil partira avec ta prochaine livraison (/sync livrer) ; préviens Raji du cerveau choisi pour qu'il ne soit pas pris. »
 
 ## 8. Fin
 

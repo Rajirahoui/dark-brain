@@ -6,5 +6,18 @@
   },
   "enabledPlugins": {
     "mattpocock-skills@mattpocock": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/branche.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
   }
 }

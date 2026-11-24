@@ -33,7 +33,7 @@ SUJET  DESIGN  FRONT  BACK  INFRA   DÉFIS   PITCH
 
 ## ⚖️ Règles d'équipe (non négociables)
 
-1. **Une branche = un membre = son prénom** (minuscules, sans accent : `raji`, `lea-marie`). Jamais `main`, jamais la branche d'un autre.
+1. **Une branche = un membre = son prénom** (minuscules, sans accent : `raji`, `lea-marie`). Jamais `main`, jamais la branche d'un autre. **Détectée et créée seule** : à chaque ouverture de Claude Code, `scripts/branche.sh` reconnaît le compte GitHub et place chacun sur sa branche (il ne bouge pas s'il y a du travail non commité). Sa ligne « Dark Brain : … » au démarrage dit où tu es.
 2. **Les tâches vivent dans GitHub Issues** (`/tache`), jamais dans un fichier.
 3. **Merge, jamais rebase. Jamais de force-push.**
 4. **Chacun fusionne sa propre PR** vers `main`, après `/sync` sans conflit. `main` est protégée : on y entre par PR. Gel à 7h45.

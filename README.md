@@ -26,7 +26,9 @@ claude
 
 À l'ouverture du dossier, Claude Code propose d'installer le plugin **mattpocock-skills** (skills de dev : `tdd`, `prototype`, `code-review`, `diagnosing-bugs`…) : accepte.
 
-Puis tape **`/setup`** et réponds aux questions. Il crée ton profil, te fait choisir **ton cerveau**, crée ta branche et demande ton accès au corpus.
+**Ta branche se fait toute seule** : à chaque ouverture de Claude Code dans le dossier, Dark Brain reconnaît ton compte GitHub, crée ta branche (ton prénom) et te place dessus. Il ne touche à rien si tu as du travail non commité.
+
+Puis tape **`/setup`** et réponds aux questions. Il crée ton profil, te fait choisir **ton cerveau**, publie ta branche et demande ton accès au corpus.
 Si tu n'as pas encore accès, `/setup` le demande à Raji. Relance `/setup` quand tu as reçu l'invitation.
 
 ## Comment c'est organisé

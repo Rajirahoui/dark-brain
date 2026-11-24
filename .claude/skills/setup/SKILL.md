@@ -35,7 +35,7 @@ S'il manque quelque chose, donne la commande pour son OS, dis « relance /setup 
 ## 3. Questions
 
 Demande, avec AskUserQuestion :
-1. **Prénom** (texte libre via « Other »).
+1. **Prénom** : propose le premier mot de `gh api user --jq .name` (« C'est bien Léa-Marie ? » oui / autre via « Other »). Il sert au profil, pas au nom de branche.
 2. **Pôle principal** : front · back · design · infra · pitch · polyvalent.
 3. **Promo** : B1 · B2 · B3 · M1 · M2 (via « Other » si besoin).
 4. **Points forts** (plusieurs choix) : HTML/CSS · JavaScript/TypeScript · framework front (React, Vue…) · back (Node, Python, PHP, Java…) · bases de données · réseau/infra/déploiement · UI/UX · présentation/pitch.
@@ -47,13 +47,7 @@ Demande, avec AskUserQuestion :
    - Propose d'abord jusqu'à 3 cerveaux libres qui collent au pôle (front → 03, back → 04, design → 02, infra → 05, pitch → 07, polyvalent → 01 puis 06) + « un autre ». Si « un autre » : deuxième question avec les autres libres.
    - Aucun libre (plus de 8 membres) → `cerveau: renfort`.
 
-**Slug** (nom de branche et de fichier ; `/sujet` l'applique aussi aux défis) : minuscules ; accents retirés et ligatures développées (é → e, ç → c, œ → oe, æ → ae) ; toute suite de caractères hors `a-z` et `0-9` devient **un seul** `-` ; pas de `-` au début ni à la fin ; 40 caractères au plus. Exemples : « Léa-Marie » → `lea-marie`, « Noé » → `noe`, « Jean Luc » → `jean-luc`, « Défi : Éco & Co’ » → `defi-eco-co`.
-**Slug refusé** : vide, commençant ou finissant par `-`, ou réservé (`main`, `head`, `rag`, `app`, `equipe`, `docs`, `scripts`) → redemande le prénom ou un surnom.
-**Doublon** : le slug est pris si
-- `git show origin/main:equipe/<slug>.md` existe avec un autre `github:`, ou
-- `git ls-remote origin refs/heads/<slug>` renvoie une ligne et la branche appartient à un autre pseudo. Propriétaire = ligne `github:` de `git show origin/<slug>:equipe/<slug>.md` ; à défaut, auteur de `gh pr list --head <slug> --state all --json author`.
-
-Pris → demande l'initiale du nom, utilise `<slug>-<initiale>` (« lea-d ») et **refais ce contrôle** ; encore pris → deux lettres.
+**Slug** (nom de branche et de fichier) : **ne le demande pas**, `bash scripts/branche.sh --slug` le calcule seul. Profil existant → son nom ; sinon le prénom du compte GitHub, sinon le pseudo ; minuscules, sans accent, hors `a-z0-9` → `-`, 40 caractères au plus ; nom réservé ou déjà pris par un autre → suffixe `-<pseudo>`. Annonce-le en une ligne (« ta branche sera `lea-marie` »).
 
 ## 4. Accès
 
@@ -76,9 +70,10 @@ Pris → demande l'initiale du nom, utilise `<slug>-<initiale>` (« lea-d ») et
 
 ## 6. Branche
 
-- Branche courante = `<slug>` → déjà fait.
-- `git ls-remote origin refs/heads/<slug>` renvoie une ligne → `git switch <slug>` (puis `git pull --no-rebase -q`).
-- Sinon → `git switch -c <slug> origin/main`.
+En général c'est déjà fait : `scripts/branche.sh` tourne seul à chaque ouverture de Claude Code dans ce dossier (hook `SessionStart` de `.claude/settings.json`) et place chacun sur sa branche, en la créant depuis `main` si besoin.
+- Lance `bash scripts/branche.sh` et lis sa ligne.
+- « travail non commité » → aide à commiter (sur la bonne branche) ou à mettre de côté (`git stash`), puis relance-le. Ne force jamais.
+- Branche distante qui existe déjà → après le script, `git pull --no-rebase -q`.
 
 ## 7. Profil
 

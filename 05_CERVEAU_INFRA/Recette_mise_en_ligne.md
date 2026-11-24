@@ -13,7 +13,7 @@
 | front + fonctions serveur JavaScript/Python | plateforme qui déploie front + fonctions depuis le repo |
 | serveur qui tourne en continu (Node, Python, PHP, Java) + base | plateforme d'applications ou serveur de l'école |
 
-Règle : celle qui se branche sur `Rajirahoui/dark-brain`, dossier `app/`, et déploie **à chaque fusion sur `main`**.
+Règle : celle qui se branche sur `Rajirahoui/dark-brain`, dossier `app/`, et déploie **à chaque fusion sur `main`**. Le tableau complet besoin → stack → hébergement est dans `00_CERVEAU_MERE/04_Choix_de_stack.md`.
 
 ## Étapes
 1. Créer le projet sur l'hébergeur, racine `app/`, branche `main`. Les étapes manuelles (compte, autorisation GitHub) : `wizard` peut en faire un pas-à-pas.

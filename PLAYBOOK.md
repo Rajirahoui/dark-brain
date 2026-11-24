@@ -12,7 +12,7 @@
 | J-7 | comptes prêts chez 2-3 hébergeurs, offres gratuites vérifiées | [INFRA](05_CERVEAU_INFRA/00_Cerveau_INFRA.md) |
 | J-7 | vérifier qu'on peut faire une maquette Claude Design avec son compte | [DESIGN](02_CERVEAU_DESIGN/00_Cerveau_DESIGN.md) |
 | dès publication | lire les défis 2026, pré-sélection notée | [DÉFIS](06_CERVEAU_DEFIS/00_Cerveau_DEFIS.md) |
-| J-2 | se mettre d'accord sur la stack la plus connue de l'équipe (le sujet peut la faire changer) | Raji + FRONT + BACK |
+| J-2 | choisir la stack avec `00_CERVEAU_MERE/04_Choix_de_stack.md` (la plus connue de l'équipe ; le sujet peut la faire changer), créer un projet vide et le déployer une fois | Raji + FRONT + BACK + INFRA |
 | J-0 | arriver au campus (2 rue Alphonse Colas, Lille) avant 16h39 : PC chargé, chargeur, `git pull` fait, Claude Code connecté | les 8 |
 
 ## Pendant la nuit

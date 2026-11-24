@@ -8,7 +8,7 @@ description: Cerveau 02 DESIGN - maquette les 3 à 5 écrans du parcours princip
 Lis d'abord `02_CERVEAU_DESIGN/00_Cerveau_DESIGN.md` et `02_CERVEAU_DESIGN/Recette_maquette_Claude_Design.md`, puis suis ces étapes. Questions par choix à cocher (AskUserQuestion). Repo public : données fictives seulement, aucune personne réelle, aucun logo de marque, aucun extrait de `rag/`.
 
 ## 1. Entrées
-- Sujet : `gh issue list --label sujet --state open --json number --jq '.[0].number'` puis `gh issue view <n>`. Aucune issue → demande de coller le sujet et le parcours principal.
+- Sujet : `gh issue list --label sujet --state open --json number --jq '.[0].number'` puis `gh issue view <n>`. Aucune issue → demande de coller le sujet et le parcours principal. **N'attends pas `/sujet`** : dès que SUJET a le parcours principal (vers 17h), on commence ; il ne reste que 45 minutes avant 18h.
 - Glossaire : `01_CERVEAU_SUJET/GLOSSAIRE.md` s'il existe (ses mots deviennent les libellés des écrans).
 - Tâche maquette : `gh issue list --label pole:design --state open --search "Maquette in:title" --json number,title`.
 
@@ -24,7 +24,7 @@ Claude Design vit dans Claude : c'est le type d'artifact **Design**. Avec l'outi
 **Repli** (outil Artifact ou type Design indisponible sur ce compte) : écris une maquette HTML/CSS statique dans `app/maquette/` (`index.html` avec une section par écran, tokens en variables CSS, mobile d'abord), ouvre-la dans le navigateur, puis livre-la avec `/sync` *livrer*.
 
 ## 4. Partager
-- Claude Design : rappelle que la maquette est **privée par défaut** ; la personne la partage à l'équipe depuis Claude (bouton de partage).
+- Claude Design : rappelle que la maquette est **privée par défaut** ; la personne la partage à l'équipe depuis Claude (bouton de partage), **en lecture seule uniquement** : le lien va dans une issue publique.
 - Commente la tâche maquette : `gh issue comment <n> --body "Maquette : <lien ou app/maquette/>
 Écrans : <liste>
 Tokens : <couleurs, police, espacements>"`.

@@ -2,7 +2,7 @@
 
 > Cerveau [FRONT](00_Cerveau_FRONT.md).
 
-1. **Stack :** celle que la majorité de l'équipe connaît (fixée par `/sujet`). La nuit n'est pas le moment d'apprendre un framework.
+1. **Stack :** celle que la majorité de l'équipe connaît (fixée par `/sujet`, guide : `00_CERVEAU_MERE/04_Choix_de_stack.md`). La nuit n'est pas le moment d'apprendre un framework.
 2. **Squelette avant 18h :** page d'accueil vide + navigation entre écrans vides, déployée par INFRA. Tout le monde part de là.
 3. **Découpage :** un dossier par écran ou fonctionnalité dans `app/` ; chaque dossier a un seul propriétaire (sa tâche). Le CSS est rangé par dossier (préfixe ou modules) pour éviter les conflits.
 4. **Contrat d'API d'abord :** avec BACK, écrire dans la tâche les routes et un exemple de JSON pour chacune. Coder contre des **données factices** à ce format ; brancher la vraie API quand elle répond.

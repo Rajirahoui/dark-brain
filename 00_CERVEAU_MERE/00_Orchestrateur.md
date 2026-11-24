@@ -16,6 +16,7 @@ Demande ambiguë : choisis le cerveau du livrable final (ce qui sera vu par le j
 | La demande… | Cerveau | Skills | Gate |
 |---|---|---|---|
 | le sujet tombe, comprendre, découper, répartir | [01 SUJET](../01_CERVEAU_SUJET/00_Cerveau_SUJET.md) puis `/sujet` | `/grill-me`, `domain-modeling`, `/sujet` | [Règles NDLI](01_Regles_NDLI.md) |
+| choisir la stack, un langage, un framework, une base | Cerveau Mère : [Choix de stack](04_Choix_de_stack.md) | `research`, `/savoir` | — |
 | maquette, écran, parcours, couleurs | [02 DESIGN](../02_CERVEAU_DESIGN/00_Cerveau_DESIGN.md) | `/maquette` | — |
 | intégrer un écran, composant, CSS | [03 FRONT](../03_CERVEAU_FRONT/00_Cerveau_FRONT.md) | `prototype`, `codebase-design`, `tdd` | — |
 | API, base de données, logique métier | [04 BACK](../04_CERVEAU_BACK/00_Cerveau_BACK.md) | `tdd`, `codebase-design` | — |
@@ -60,5 +61,6 @@ L'ordre des étapes et les jalons vivent dans `PLAYBOOK.md` (racine). L'orchestr
 - [01 Règles NDLI](01_Regles_NDLI.md) : ce qui est vrai pour toute l'équipe, veto.
 - [02 Équipe](02_Equipe.md) : qui tient quel cerveau, comment on se parle.
 - [03 GATE Livraison](03_GATE_Livraison.md) : la checklist de 7h.
+- [04 Choix de stack](04_Choix_de_stack.md) : quel langage, framework, base selon le besoin (repères Stack Overflow 2026).
 
 L'artefact racine de la nuit est l'**issue épinglée « Sujet NDLI 2026 »** : produite par `/sujet` à partir du travail de 01 SUJET, lue par tous les cerveaux. Aucun cerveau ne réinvente le sujet dans son coin.

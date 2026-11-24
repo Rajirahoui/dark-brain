@@ -42,6 +42,9 @@ printf '[accent](d/%%C3%%A9.md) [paren](d/f(1).md) [query](d/a.txt?x=1)\n' > l.m
 expect "lien encodé, parenthèses, query acceptés" 0 "$(run)"
 printf 'du code `[x](absent.md)` ici\n\n```\n[bloc](absent.md)\n```\n' > l.md; git add l.md
 expect "lien dans du code ignoré" 0 "$(run)"
+echo x > 'd/a b.md'; git add -A
+printf '[chevrons](<d/a b.md>) [encode](d/a%%20b.md)\n' > l.md; git add l.md
+expect "lien avec espace (<…> ou %%20) accepté" 0 "$(run)"
 printf '[casse](d/A.txt)\n' > l.md; git add l.md
 expect "lien à la mauvaise casse bloqué" 1 "$(run)"
 git rm -qf l.md; git rm -rqf d

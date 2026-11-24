@@ -18,7 +18,7 @@ Lancé par une seule personne (Raji par défaut), qui doit avoir l'accès en éc
 
 ## 3. Proposition (rien n'est créé avant le OK)
 Affiche :
-- **Stack proposée** et **découpage de `app/`** en dossiers (un par pôle ou par fonctionnalité). Règle : une tâche touche des fichiers qu'une seule personne modifie.
+- **Stack proposée**, choisie avec `00_CERVEAU_MERE/04_Choix_de_stack.md` (règle d'or + tableau « selon le besoin ») et les points forts des profils, en gardant la stack préparée à J-2 sauf si le sujet l'interdit ; et **découpage de `app/`** en dossiers (un par pôle ou par fonctionnalité). Règle : une tâche touche des fichiers qu'une seule personne modifie.
 - Un **tableau** : # · tâche (1-2 h, verbe + résultat) · pôle · défi · dépend de · assigné (pseudo) · dossier de `app/`.
 - **Ligne 1, toujours** : `pole:infra` « Mise en ligne : choisir l'hébergeur et déployer une page vide depuis main », à finir **avant 20 h**, assignée au responsable `05_CERVEAU_INFRA`.
 - **Ligne 2, toujours** : `pole:design` « Maquette des écrans clés (/maquette) », à finir **avant 18 h**, assignée au responsable `02_CERVEAU_DESIGN`. Les tâches d'écrans front en dépendent.
